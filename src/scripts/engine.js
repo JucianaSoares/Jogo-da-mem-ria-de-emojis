@@ -825,8 +825,6 @@ function startGame() {
   if (movesDisplay) movesDisplay.innerText = `Jogadas: 0 | Erros: 0`;
 
 if (somVitoria) {
-      somVitoria.pause();
-      somVitoria.currentTime = 0;
       // Forçamos o recarregamento silencioso
       somVitoria.load(); 
   }
