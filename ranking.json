@@ -1,0 +1,31 @@
+{
+  "players": [
+    {
+      "name": "Mestre dos Emojis",
+      "score": 1250,
+      "difficulty": "Difícil",
+      "time": 45,
+      "moves": 16,
+      "date": "01/04/2026 - 14:30",
+      "achievements": ["✅ Sem erros", "⚡ Rápido", "🔥 Combo: 3 partidas"]
+    },
+    {
+      "name": "Explorador de Memória",
+      "score": 850,
+      "difficulty": "Médio",
+      "time": 58,
+      "moves": 14,
+      "date": "02/04/2026 - 10:15",
+      "achievements": ["✅ Sem erros", "🧩 Econômico"]
+    },
+    {
+      "name": "Iniciante Sortudo",
+      "score": 300,
+      "difficulty": "Fácil",
+      "time": 30,
+      "moves": 8,
+      "date": "03/04/2026 - 09:00",
+      "achievements": ["🌟 Novo nível"]
+    }
+  ]
+}

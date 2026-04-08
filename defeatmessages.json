@@ -1,0 +1,28 @@
+{
+  "default": {
+    "groups": [
+      ["😢 Não foi dessa vez...", "😢 Continue tentando!", "😢 Você quase conseguiu!"],
+      ["💔 Derrota dura!", "💔 Mas não desanime!", "💔 A próxima é sua!"],
+      ["⚡ Faltou energia!", "⚡ Mais sorte na próxima!", "⚡ Você pode melhorar!"],
+      ["🕒 O tempo acabou!", "🕒 Foi por pouco!", "🕒 Tente novamente!"]
+    ]
+  },
+  "easy": {
+    "groups": [
+      ["😅 Poxa, acabou rápido!", "😅 Mas você pode vencer!", "😅 Bora tentar de novo!"],
+      ["🕒 O tempo voou!", "🕒 Não desista!", "🕒 Você consegue!"]
+    ]
+  },
+  "medium": {
+    "groups": [
+      ["😢 Quase lá!", "😢 Você estava indo bem!", "😢 Mais uma tentativa!"],
+      ["⚡ Boa luta!", "⚡ Não foi suficiente!", "⚡ Mas você está melhorando!"]
+    ]
+  },
+  "hard": {
+    "groups": [
+      ["💔 Desafio cruel!", "💔 Mas você é forte!", "💔 Continue tentando!"],
+      ["🔥 Foi intenso!", "🔥 Você quase dominou!", "🔥 A próxima é sua!"]
+    ]
+  }
+}

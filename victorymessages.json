@@ -1,0 +1,34 @@
+{
+  "default": {
+    "groups": [
+      ["🎉 Mandou bem!", "🎉 Você venceu!", "🎉 Boa jogada!"],
+      ["🏆 Vitória épica!", "🏆 Campeã!", "🏆 Conquista incrível!"],
+      ["👏 Show de bola!", "👏 Excelente!", "👏 Brilhou demais!"],
+      ["🔥 Você arrasou!", "🔥 Imbatível!", "🔥 Dominou a partida!"],
+      ["🌟 Campeã absoluta!", "🌟 Estrela do jogo!", "🌟 Brilho total!"],
+      ["💯 Sensacional!", "💯 Perfeita!", "💯 Top demais!"],
+      ["🚀 Voou alto!", "🚀 Incrível desempenho!", "🚀 Fora de série!"]
+    ]
+  },
+  "easy": {
+    "groups": [
+      ["🎉 Mandou bem!", "🎉 Você venceu!", "🎉 Boa jogada!"],
+      ["👏 Show de bola!", "👏 Excelente!", "👏 Brilhou demais!"],
+      ["😊 Fácil demais!", "😊 Você dominou!", "😊 Tranquilo e perfeito!"]
+    ]
+  },
+  "medium": {
+    "groups": [
+      ["🏆 Vitória épica!", "🏆 Campeã!", "🏆 Conquista incrível!"],
+      ["🔥 Você arrasou!", "🔥 Imbatível!", "🔥 Dominou a partida!"],
+      ["⚡ Energia total!", "⚡ Jogada poderosa!", "⚡ Você brilhou!"]
+    ]
+  },
+  "hard": {
+    "groups": [
+      ["🌟 Campeã absoluta!", "🌟 Estrela do jogo!", "🌟 Brilho total!"],
+      ["💯 Sensacional!", "💯 Perfeita!", "💯 Top demais!"],
+      ["🦾 Desafio vencido!", "🦾 Força incrível!", "🦾 Você é imbatível!"]
+    ]
+  }
+}

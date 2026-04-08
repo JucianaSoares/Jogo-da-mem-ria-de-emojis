@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jogo Da Memória Emojis</title>
+  <link rel="stylesheet" href="/src/style/reset.css">
+  <link rel="stylesheet" href="/src/style/main.css">
+</head>
+<body>
+  <header>
+    <aside class="achievements">
+      <h3>🏅 Conquistas</h3>
+      <ul id="achievements-list"></ul>
+    </aside>
+
+    <div class="progress-container">
+      <div id="progress-bar" class="progress-bar"></div>
+    </div>
+    <p id="progress-text"></p>
+    <div id="xp-summary"></div>
+  </header>
+<main>
+<div class="missions">
+  <h3>🎯 Missões Diárias</h3>
+  <ul id="missions-list"></ul>
+  <div id="mission-detail" class="mission-detail"></div>
+  <p id="mission-progress" class="mission-progress"></p>
+<!-- Barra de progresso das missões -->
+  <div class="missions-progress-container">
+    <div id="missions-progress-bar" class="missions-progress-bar"></div>
+  </div>
+  <!-- Mensagem de parabéns -->
+  <div id="congrats-message" class="congrats-message">🎉 Parabéns! Você concluiu todas as missões de hoje! 🎉</div>
+  <div id="fireworks-container"></div>
+</div>
+    
+<div class="game-header">
+  <div class="hint-container">
+    <button id="use-hint">Usar dica extra 💡</button>
+    <span id="hint-status">3</span>
+  </div>
+</div>
+
+    <!-- Container do jogo -->
+    <div class="container">
+      <h2>JOGO DA MEMÓRIA Emojis</h2>
+
+      <div id="difficulty-selector">
+  <button onclick="setDifficulty('easy')">Fácil</button>
+  <button onclick="setDifficulty('medium')">Médio</button>
+  <button onclick="setDifficulty('hard')">Difícil</button>
+</div>
+
+<div id="theme-selector">
+  <label for="themes">🎨 Escolha seu tema:</label>
+  <select id="themes"></select>
+</div>
+
+      <div class="board"></div>
+
+      <p class="timer">Tempo: -</p>
+      <div class="timer-container">
+  <div id="timer-bar" class="timer-bar"></div>
+</div>
+      <p class="moves">Jogadas: 0</p>
+      <div class="winner-message"></div>
+<button class="play-again">Jogar novamente</button>
+
+      <button class="clear-ranking" onclick="clearRanking()">Apagar recordes</button>
+ </div>
+   </main>
+<div class="ranking"></div>
+<div id="tutorial-modal" class="tutorial">
+  <div class="tutorial-content">
+    <h2>Bem-vindo ao jogo!</h2>
+    <p>💡 Aqui está uma novidade: o botão <strong>“Usar dica extra”</strong> já aparece desde o início.</p>
+    <p>No começo ele estará desativado, mas conforme você avança de nível, vai desbloquear dicas extras que podem revelar cartas por alguns segundos.</p>
+    <button onclick="closeTutorial()">Entendi!</button>
+  </div>
+</div>
+<button id="export-ranking">📥 Exportar Ranking</button>
+<input type="file" accept=".json" onchange="importRanking(event)">
+  
+<div id="hint-box" class="hint-box"></div>
+<div id="level-up-alert" class="alert hidden">
+  <div class="alert-icon">🎉</div>
+  <div class="alert-message"></div>
+  <button onclick="closeLevelUpAlert()">OK</button>
+</div>
+
+<div id="reward-alert" class="alert hidden"></div>
+
+<div id="name-modal" class="modal">
+  <div class="modal-content">
+    <h2>🏆 Parabéns pela vitória!</h2>
+    <p>Digite seu nome para salvar no ranking:</p>
+    <input type="text" id="player-name" placeholder="Seu nome aqui...">
+    <button id="save-name">Salvar</button>
+  </div>
+</div>
+<audio id="victory-sound" src="src/audios/Victorysound.mp3" preload="auto"></audio>
+<audio id="defeat-sound" src="src/audios/Defeatsound.mp3" preload="auto"></audio>
+<audio id="correct-sound" src="src/audios/acerto.mp3" preload="auto"></audio>
+<audio id="wrong-sound" src="src/audios/erro.mp3" preload="auto"></audio>
+<audio id="timer-alert" src="src/audios/alert.mp3" preload="auto"></audio>
+<audio id="congrats-sound" src="src/audios/aplausos.mp3" preload="auto"></audio>
+<audio id="last-hint-sound" src="src/audios/lastHint.mp3" preload="auto"></audio>
+<audio id="level-up-sound" src="src/audios/level-up.mp3"></audio>
+
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+
+ <script type="module" src="/src/scripts/engine.js"></script>
+</body>
+</html>
