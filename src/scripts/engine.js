@@ -135,14 +135,14 @@ const missionMap = {
   newLevel: 6           // Alcançar um novo nível hoje
 };
 
-const somVitoria = document.getElementById("victory-sound");
-const somDerrota = document.getElementById("defeat-sound");
-const somAcerto = document.getElementById("correct-sound");
+const somVitoria = document.querySelector("#victory-sound");
+const somDerrota = document.querySelector("#defeat-sound");
+const somAcerto = document.querySelector("#correct-sound");
 const somErro = document.querySelector("#wrong-sound");
-const somAlertaTimer = document.getElementById("timer-alert");
-const somAplausos = document.getElementById("congrats-sound");
-const somUltimaDica = document.getElementById("last-hint-sound");
-const somLevelUp = document.getElementById("level-up-sound");
+const somAlertaTimer = document.querySelector("#timer-alert");
+const somAplausos = document.querySelector("#congrats-sound");
+const somUltimaDica = document.querySelector("#last-hint-sound");
+const somLevelUp = document.querySelector("#level-up-sound");
 
 const winnerMsg = document.querySelector(".winner-message")
 // --- LÓGICA DE TEMAS ---
