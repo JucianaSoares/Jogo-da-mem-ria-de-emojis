@@ -1123,29 +1123,29 @@ function checkVictory() {
     }
     
 // 3. EXECUÇÃO DO SOM DE VITÓRIA
-    if (somVitoria) {
-  // O segredo: Resetar e carregar antes de tocar
-  somVitoria.pause();
-  somVitoria.currentTime = 0;
-  somVitoria.load(); 
+    (VERSÃO FORÇA BRUTA)
+if (somVitoria) {
+    // Reset imediato
+    somVitoria.pause();
+    somVitoria.currentTime = 0;
+    somVitoria.load();
 
-  // Aumentamos o delay para 500ms (meio segundo)
-  // Isso evita que ele brigue com o som da última carta virada
-  setTimeout(() => {
-    const playPromise = somVitoria.play();
-
-    if (playPromise !== undefined) {
-      playPromise.then(() => {
-        exibirMensagemVitoria();
-      }).catch(error => {
-        console.log("Navegador bloqueou o áudio, tentando novamente...");
-        // Fallback: Tenta tocar de novo se o primeiro falhar
-        somVitoria.play();
-        exibirMensagemVitoria();
-      });
-    }
-  }, 500); 
-    }
+    // Aumentamos o delay para 800ms para garantir que o som de ACERTO já acabou
+    setTimeout(() => {
+        console.log("Tentando tocar vitória...");
+        somVitoria.play()
+            .then(() => {
+                console.log("Som de vitória iniciou!");
+                exibirMensagemVitoria();
+            })
+            .catch(e => {
+                console.error("Erro ao tocar vitória:", e);
+                // Se falhar, tentamos tocar o de acerto de novo só para não ficar mudo
+                if(somAcerto) somAcerto.play();
+                exibirMensagemVitoria();
+            });
+    }, 800);
+}
   }
 }
 
