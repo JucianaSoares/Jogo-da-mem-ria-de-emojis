@@ -1121,28 +1121,27 @@ function checkVictory() {
     }
     
 // 3. EXECUÇÃO DO SOM DE VITÓRIA
-    (VERSÃO FORÇA BRUTA)
-if (somVitoria) {
-    // Reset imediato
+    if (somVitoria) {
+    // 1. PARAR o som de acerto imediatamente para limpar o canal de áudio
+    if (somAcerto) {
+        somAcerto.pause();
+        somAcerto.currentTime = 0;
+    }
+
+    // 2. Preparar a vitória
     somVitoria.pause();
     somVitoria.currentTime = 0;
     somVitoria.load();
 
-    // Aumentamos o delay para 800ms para garantir que o som de ACERTO já acabou
+    // 3. O delay estratégico (aumente para 600ms para garantir)
     setTimeout(() => {
-        console.log("Tentando tocar vitória...");
-        somVitoria.play()
-            .then(() => {
-                console.log("Som de vitória iniciou!");
-                exibirMensagemVitoria();
-            })
-            .catch(e => {
-                console.error("Erro ao tocar vitória:", e);
-                // Se falhar, tentamos tocar o de acerto de novo só para não ficar mudo
-                if(somAcerto) somAcerto.play();
-                exibirMensagemVitoria();
-            });
-    }, 800);
+        somVitoria.play().then(() => {
+            exibirMensagemVitoria();
+        }).catch(e => {
+            console.log("Erro ao tocar vitória, tentando de novo...");
+            somVitoria.play();
+        });
+    }, 600);
 }
   }
 }
