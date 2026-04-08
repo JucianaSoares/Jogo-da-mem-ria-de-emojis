@@ -1124,28 +1124,31 @@ function checkVictory() {
     
 // 3. EXECUÇÃO DO SOM DE VITÓRIA
     if (somVitoria) {
-      // Forçamos o estado do áudio
-      somVitoria.muted = false;
-      somVitoria.volume = 1.0;
-      
-      // O truque: Um pequeno delay para desocupar a CPU
-      setTimeout(() => {
-        const playPromise = somVitoria.play();
+  // O segredo: Resetar e carregar antes de tocar
+  somVitoria.pause();
+  somVitoria.currentTime = 0;
+  somVitoria.load(); 
 
-        if (playPromise !== undefined) {
-          playPromise.then(() => {
-            // SÓ MOSTRA A MENSAGEM SE O SOM COMEÇAR
-            exibirMensagemVitoria();
-          }).catch(error => {
-            console.log("Erro ao tocar:", error);
-            // Se o som falhar, mostra a mensagem de qualquer jeito
-            exibirMensagemVitoria();
-          });
-        }
-      }, 150); // Aumentamos para 150ms para garantir
+  // Aumentamos o delay para 500ms (meio segundo)
+  // Isso evita que ele brigue com o som da última carta virada
+  setTimeout(() => {
+    const playPromise = somVitoria.play();
+
+    if (playPromise !== undefined) {
+      playPromise.then(() => {
+        exibirMensagemVitoria();
+      }).catch(error => {
+        console.log("Navegador bloqueou o áudio, tentando novamente...");
+        // Fallback: Tenta tocar de novo se o primeiro falhar
+        somVitoria.play();
+        exibirMensagemVitoria();
+      });
+    }
+  }, 500); 
     }
   }
 }
+
 
 // Criamos uma função separada para a mensagem não "atropelar" o áudio
 function exibirMensagemVitoria() {
