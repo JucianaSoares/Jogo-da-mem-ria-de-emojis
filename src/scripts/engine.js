@@ -915,17 +915,23 @@ const todosSons = [somVitoria, somDerrota, somAcerto, somErro, somAlertaTimer, s
 
 function flipCard(card) {
 // Isso avisa ao navegador que este áudio tem permissão para tocar depois.
-  if (moves === 0 && openCards.length === 0) { 
-      //load para garantir que o arquivo está pronto
-    if (somVitoria) somVitoria.load(); 
-    if (somAcerto) somAcerto.load();
+  if (moves === 0 && openCards.length === 0) {
+    const audios = [somVitoria, somAcerto, somErro, somAlertaTimer];
+    audios.forEach(audio => {
+      if (audio) {
+        // O segredo: tocar e pausar imediatamente
+        audio.play().then(() => {
+          audio.pause();
+          audio.currentTime = 0;
+        }).catch(e => console.log("Áudio aguardando interação..."));
+      }
+    });
   }
 
-if (!audioUnlocked) {
-    unlockAudioContext();
+if (typeof audioUnlocked !== 'undefined' && !audioUnlocked) {
+    if (typeof unlockAudioContext === "function") unlockAudioContext();
     audioUnlocked = true;
   }
-
   // Inicia o timer apenas se ele ainda não estiver rodando
   if (typeof startTimer === "function" && !timerInterval) {
     startTimer();
