@@ -1,5 +1,5 @@
 # Jogo-da-mem-ria-de-emojis
-Criação de jogo da didática do curso de front-end 
+Criação de jogo  didático do curso de front-end 
 # 🎮 Jogo da Memória de Emojis
 
 Um desafio de memória dinâmico e profissional, desenvolvido com foco em interatividade, persistência de dados e experiência do usuário. O jogo oferece uma jornada completa, desde a escolha de temas até a disputa por posições no ranking.
